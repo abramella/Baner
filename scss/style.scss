@@ -1,0 +1,453 @@
+@mixin keyframes($animationName) {
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+    @-moz-keyframes #{$animationName} {
+        @content;
+    }
+    @-o-keyframes #{$animationName} {
+        @content;
+    }
+    @keyframes #{$animationName} {
+        @content;
+    }
+}
+
+@mixin animation ($delay, $duration, $animation) {
+    -webkit-animation-delay: $delay;
+    -webkit-animation-duration: $duration;
+    -webkit-animation-name: $animation;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-delay: $delay;
+    -moz-animation-duration: $duration;
+    -moz-animation-name: $animation;
+    -moz-animation-fill-mode: forwards;
+    -o-animation-delay: $delay;
+    -o-animation-duration: $duration;
+    -o-animation-name: $animation;
+    -o-animation-fill-mode: forwards;
+    animation-delay: $delay;
+    animation-duration: $duration;
+    animation-name: $animation;
+    animation-fill-mode: forwards;
+}
+
+@include keyframes(move_Down1) {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@include keyframes(move_Down2) {
+    0% {
+        transform: translateY(-150px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@include keyframes(move_Down3) {
+    0% {
+        transform: translateY(-300px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@include keyframes(move_Down4) {
+    0% {
+        transform: translateY(-500px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@include keyframes(move_Down_border) {
+    0% {
+        margin-top: 0px;
+        opacity: 0;
+    }
+    100% {
+        margin-top: 220px; // nie wiem dlaczego opcja translate zamiast margin-top w IE nie działa
+        opacity: 1;
+    }
+}
+
+@include keyframes(move_Down_border_xs) {
+    0% {
+        margin-top: 0px;
+        opacity: 0;
+    }
+    100% {
+        margin-top: 110px;
+        opacity: 1;
+    }
+}
+
+@include keyframes(move_Right_border) {
+    0% {
+        margin-top: 0;
+        transform: translate(0px, 220px);
+    }
+    100% {
+        transform: translate(45%, 220px);
+    }
+}
+
+@include keyframes(move_Right_border_xs) {
+    0% {
+        margin-top: 0;
+        transform: translate(0px, 110px);
+    }
+    100% {
+        transform: translate(42%, 110px);
+    }
+}
+
+@include keyframes(move_left) {
+    0% {
+        transform: translateX(0px);
+    }
+    100% {
+        transform: translateX(-170px);
+    }
+}
+
+@include keyframes(move_right) {
+    0% {
+        transform: translateX(0px);
+    }
+    100% {
+        transform: translateX(200px);
+    }
+}
+
+@include keyframes(move_right_xs) {
+    0% {
+        transform: translateX(0px);
+    }
+    100% {
+        transform: translateX(130px);
+    }
+}
+
+@include keyframes(move_Down3) {
+    0% {
+        transform: translateY(-300px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@include keyframes(move_both_right) {
+    0% {
+        transform: translateX(-0);
+    }
+    100% {
+        transform: translateX(120%);
+    }
+}
+
+@include keyframes(move_both_left) {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-120%);
+    }
+}
+
+@include keyframes(rotate_left) {
+    0% {
+        transform: translateX(200px) rotate(0deg);
+    }
+    100% {
+        transform: translateX(200px) rotate(-360deg);
+    }
+}
+@include keyframes(rotate_left_xs) {
+    0% {
+        transform: translateX(130px) rotate(0deg);
+    }
+    100% {
+        transform: translateX(130px) rotate(-360deg);
+    }
+}
+
+@include keyframes(rotate_right) {
+    0% {
+        transform: translateX(200px) rotate(0deg);
+    }
+    100% {
+        transform: translateX(200px) rotate(360deg);
+    }
+}
+
+
+@include keyframes(rotate_X) {
+    0% {
+        transform: scale(4) rotateX(0deg);
+    }
+    100% {
+        transform: scale(4) rotateX(360deg);
+    }
+}
+
+@include keyframes(scale) {
+    0% {
+        transform: scale(1);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(4);
+        opacity: 1;
+    }
+}
+
+@include keyframes(change_color) {
+    from {
+        background-position-y: -100px;
+    }
+    to {
+        background-position-y: 0px;
+    }
+}
+
+@include keyframes(vanishing) {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@include keyframes(vanishing_box) {
+    0% {
+        opacity: 1;
+        transform: translate(45%, 220px);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(45%, 220px);
+    }
+}
+
+@include keyframes(vanishing_box_xs) {
+    0% {
+        opacity: 1;
+        transform: translate(42%, 110px);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(42%, 110px);
+    }
+}
+
+$animation-duration: 2s;
+$animation-delay:0s;
+.baner {
+    //border: 1px solid black;
+    width: 100%;
+    height: 500px;
+}
+
+.container {
+    margin: 0 auto;
+    width: 985px;
+    //width:600px;
+    @media (max-width: 985px) {
+        width: 100%;
+    }
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+    .first_row,
+    .second_row,
+    .third_row,
+    .fourth_row {
+        display: flex;
+        justify-content: space-between;
+        margin: 20px;
+    }
+    .first_row {
+        opacity: 0;
+        @include animation( ($animation-delay, $animation-delay +26s), $animation-duration, (move_Down1, move_both_left));
+        div:first-child {
+            @include animation($animation-delay+10s, $animation-duration, move_left);
+        }
+        div:nth-child(2) {
+            @include animation(($animation-delay+10s, $animation-delay+18s, $animation-delay+26s), ($animation-duration, $animation-duration/3, $animation-duration), (move_right, change_color, rotate_left));
+            @media(max-width: 985px) {
+                @include animation(($animation-delay+10s, $animation-delay+18s, $animation-delay+26s), ($animation-duration, $animation-duration/3, $animation-duration), (move_right_xs, change_color, rotate_left_xs));
+            }
+        }
+    }
+    .second_row {
+        opacity: 0;
+        @include animation(($animation-delay + 2s, $animation-delay + 26s), $animation-duration, (move_Down2, move_both_right));
+        div:first-child {
+            @include animation($animation-delay + 12s, $animation-duration, move_left);
+        }
+        div:nth-child(2) {
+            @include animation(($animation-delay + 12s, $animation-delay + 20s, $animation-delay + 26s), ($animation-duration, $animation-duration/3, $animation-duration), (move_right, change_color, rotate_right));
+            @media(max-width: 985px) {
+                @include animation(($animation-delay + 12s, $animation-delay + 20s, $animation-delay + 26s), ($animation-duration, $animation-duration/3, $animation-duration), (move_right_xs, change_color, rotate_right));
+            }
+        }
+    }
+    .third_row {
+        opacity: 0;
+        @include animation(($animation-delay + 4s, $animation-delay + 26s), $animation-duration, (move_Down3, move_both_left));
+        div:first-child {
+            @include animation($animation-delay + 14s, $animation-duration, move_left);
+        }
+        div:nth-child(2) {
+            @include animation(($animation-delay + 14s, $animation-delay + 22s, $animation-delay + 26s), ($animation-duration, $animation-duration/3, $animation-duration), (move_right, change_color, rotate_left));
+            @media(max-width: 985px) {
+                @include animation(($animation-delay + 14s, $animation-delay + 22s, $animation-delay + 26s), ($animation-duration, $animation-duration/3, $animation-duration), (move_right_xs, change_color, rotate_left_xs));
+            }
+        }
+    }
+    .fourth_row {
+        opacity: 0;
+        @include animation(($animation-delay + 6s, $animation-delay + 26s), $animation-duration, (move_Down4, move_both_right));
+        div:first-child {
+            @include animation($animation-delay + 16s, $animation-duration, move_left);
+        }
+        div:nth-child(2) {
+            @include animation(($animation-delay + 16s, $animation-delay + 24s, $animation-delay + 26s), ($animation-duration, $animation-duration/3, $animation-duration), (move_right, change_color, rotate_right));
+            @media(max-width: 985px) {
+                @include animation(($animation-delay + 16s, $animation-delay + 24s, $animation-delay + 26s), ($animation-duration, $animation-duration/3, $animation-duration), (move_right_xs, change_color, rotate_right));
+            }
+        }
+    }
+    .name {
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        font-size: 48px;
+        @media (max-width: 985px) {
+            font-size: 24px;
+        }
+        color: #4d4d4f;
+        font-weight: bold;
+        padding-top: 2%;
+        margin-left: 150px;
+    }
+    .sprite {
+        width: 100px;
+        height: 100px;
+        @media (max-width: 985px) {
+            width: 50px;
+            height: 50px;
+            margin-right: 120px;
+            background-image: url('../images/sprite_s.png');
+        }
+        background-image: url('../images/sprite.png');
+        background-repeat: no-repeat;
+        margin-right: 200px;
+    }
+    //change colors
+    .sprite-blue-star {
+        background-position: -100px -100px;
+        @media (max-width: 985px) {
+            background-position: -50px -50px;
+        }
+    }
+    .sprite-green-square {
+        background-position: 0px -100px;
+        @media (max-width: 985px) {
+            background-position: 0px -50px;
+        }
+    }
+    .sprite-red-hexagon {
+        background-position: -200px -100px;
+        @media (max-width: 985px) {
+            background-position: -100px -50px;
+        }
+    }
+    .sprite-yellow-circle {
+        background-position: -300px -100px;
+        @media (max-width: 985px) {
+            background-position: -150px -50px;
+        }
+    }
+    //druga czesc
+    .new_line {
+        //align-items: center;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin-top: 12%;
+        @media(max-width: 985px) {
+            margin-top: 45px;
+        }
+        .new_first_row {
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+            font-size: 10px;
+            @media (max-width: 985px) {
+                font-size: 5px;
+            }
+            font-weight: bold;
+        }
+        .new_second_row {
+            font-family: 'Lobster', cursive;
+            font-size: 10px;
+            @media (max-width: 985px) {
+                font-size: 5px;
+            }
+            margin-top: 20%;
+        }
+        .new_first_row,
+        .new_second_row {
+            opacity: 0;
+            @include animation(($animation-delay+30s,
+            $animation-delay+38s,
+            $animation-delay+40s),
+            $animation-duration,
+            (scale,
+            rotate_X,
+            vanishing));
+            text-align: center;
+        }
+    }
+    .box {
+        //align-items: center;
+        opacity: 0;
+        position: absolute;
+        left: 0;
+        right: 0;
+        //margin-top:12%;
+        @include animation( ($animation-delay+33s,
+        $animation-delay+36s,
+        $animation-delay+40s),
+        $animation-duration,
+        (move_Down_border,
+        move_Right_border,
+        vanishing_box));
+        @media (max-width: 985px) {
+            @include animation( ($animation-delay+33s, $animation-delay+36s, $animation-delay+40s), $animation-duration, (move_Down_border_xs, move_Right_border_xs, vanishing_box_xs));
+        }
+        .box_row {
+            border: 1px solid gray;
+            width: 100px;
+            color: gray;
+        }
+    }
+}
